@@ -8,7 +8,8 @@ def main():
     bg_img = pg.image.load("ex01-20230418/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex01-20230418/fig/3.png")
     kk_img = pg.transform.flip(kk_img, True, False)
-    kk_imgs = [kk_img,pg.transform.rotozoom(kk_img, 10, 1.0)]
+    kk_imgs = [kk_img,pg.transform.rotozoom(kk_img, 3.3, 1.0),pg.transform.rotozoom(kk_img, 6.6, 1.0),
+               pg.transform.rotozoom(kk_img, 10, 1.0),pg.transform.rotozoom(kk_img, 6.6, 1.0),pg.transform.rotozoom(kk_img, 3.3, 1.0)]
 
     
 
@@ -27,7 +28,7 @@ def main():
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg_img, [-x+1600, 0])
 
-        screen.blit(kk_imgs[(tmr//20)%2],[300,200])
+        screen.blit(kk_imgs[(tmr//5)%6],[300,200])
 
 
         pg.display.update()
