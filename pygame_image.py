@@ -14,13 +14,18 @@ def main():
 
 
     tmr = 0
+    x = 1
 
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         tmr += 1
-        screen.blit(bg_img, [0, 0])
+        x += 1
+        if x >= 1599:
+            x = 1
+        screen.blit(bg_img, [-x, 0])
+        screen.blit(bg_img, [-x+1600, 0])
 
         screen.blit(kk_imgs[(tmr//20)%2],[300,200])
 
